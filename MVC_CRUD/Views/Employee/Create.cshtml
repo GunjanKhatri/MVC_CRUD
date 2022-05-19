@@ -1,0 +1,42 @@
+﻿@model MVC_CRUD.Models.EmployeeDepartmentViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{
+    @Html.HiddenFor(y => y.EmployeeId)
+
+    <div class="form-group">
+        @Html.LabelFor(y => y.FirstName)
+        @Html.TextBoxFor(y => y.FirstName, new { @class = "form-control" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(y => y.LastName)
+        @Html.TextBoxFor(y => y.LastName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(y => y.City)
+        @Html.TextBoxFor(y => y.City, new { @class = "form-control" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(y => y.State)
+        @Html.TextBoxFor(y => y.State, new { @class = "form-control" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(y => y.DepartmentName)
+        @Html.DropDownListFor(y => y.DepartmentId, Model.Data, new { @class = "form-control" })
+
+
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+}
+

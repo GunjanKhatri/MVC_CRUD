@@ -1,0 +1,33 @@
+﻿@model List<MVC_CRUD.Models.EmployeeDepartmentViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee Information</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>Employee Id</th>
+        <th>FullName</th>
+        <th>Department Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+
+    @foreach(var r in Model)
+    {
+        <tr>
+            <td>@r.EmployeeId</td>
+            <td>@r.FullName</td>
+            <td>@r.DepartmentName</td>
+            <td>@r.City</td>
+            <td>@r.State</td>
+            <td><a href="@Url.Action("EditEmployee","Employee", new { employeeId=r.EmployeeId })">Edit</a></td>
+            <td><a href="@Url.Action("DeleteEmployee","Employee", new { employeeId= r.EmployeeId})">Delete</a></td>
+        </tr>
+    }
+
+</table>
